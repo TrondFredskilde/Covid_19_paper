@@ -100,6 +100,26 @@ def update_plot(attr, old, new):
     # Update the data
     geosource.geojson = new_data 
     
+def update_plot1(attr, old, new):
+    # The input day is the day selected from the slider
+    day = slider.value
+    new_data = json_data(day)
+    
+    # The input cr is the criteria selected from the select box
+    cr = select.value
+    input_field = format_df.loc[format_df['verbage'] == cr, 'field'].iloc[0]
+    
+    # Update the plot based on the changed inputs
+    p = make_plot(input_field)
+    
+    # Update the layout, clear the old document and display the new document
+    layout = column(p, widgetbox(select), widgetbox(slider))
+    curdoc().clear()
+    curdoc().add_root(layout)
+    
+    # Update the data
+    geosource.geojson = new_data 
+    
     # Create a plotting function
 def make_plot(field_name):    
   # Set the format of the colorbar
@@ -170,7 +190,7 @@ slider.on_change('value', update_plot)
 # Make a selection object: select
 select = Select(title='Select Criteria:', value='Positive', options=['Positive', 'Negative','Hospitalized',
                                                                     'In Ventilator','Recovered','Death','Total Test'])
-select.on_change('value', update_plot)
+select.on_change('value', update_plot1)
 
 # Make a column layout of widgetbox(slider) and plot, and add it to the current document
 # Display the current document
