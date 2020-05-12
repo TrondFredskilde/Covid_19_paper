@@ -94,8 +94,8 @@ def update_plot(attr, old, new):
     
     # Update the layout, clear the old document and display the new document
     layout = column(p, widgetbox(select), widgetbox(slider))
-    curdoc().clear()
-    curdoc().add_root(layout)
+    #curdoc().clear()
+    #curdoc().add_root(layout)
     
     # Update the data
     geosource.geojson = new_data 
