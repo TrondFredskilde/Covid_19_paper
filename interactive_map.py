@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue May 12 11:16:28 2020
+#"""
+#Created on Tue May 12 11:16:28 2020
 
-@author: trond
-"""
+#@author: trond
+#"""
 
 import pandas as pd
 import numpy as np
