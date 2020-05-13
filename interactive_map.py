@@ -139,7 +139,7 @@ def make_plot(field_name):
   verbage = format_df.loc[format_df['field'] == field_name, 'verbage'].iloc[0]
 
   p = figure(title = verbage + ' for each state', 
-             plot_height = 400, plot_width = 700,
+             plot_height = 300, plot_width = 700,
              toolbar_location = None)
   p.xgrid.grid_line_color = None
   p.ygrid.grid_line_color = None
